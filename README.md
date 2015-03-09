@@ -7,7 +7,9 @@
 ### Скриншоты
 
 ![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/1.png)
+
 ![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/2.png)
+
 ![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/3.png)
 
 ### Установка
