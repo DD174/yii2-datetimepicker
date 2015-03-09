@@ -1,4 +1,4 @@
-# Yii2 DateTimePicker
+# Yii2 DateTimePicker widget
 
 ### Описание
 
