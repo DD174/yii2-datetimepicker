@@ -19,7 +19,7 @@
 		"psr-4": {
 			"vakorovin\\datetimepicker\\": ""
 		}
-	}
+	},
 	"extra": {
 		"asset-installer-paths": {
 			"npm-asset-library": "vendor/npm",
