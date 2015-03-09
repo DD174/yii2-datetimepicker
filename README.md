@@ -1,17 +1,39 @@
-yii2-datetimepicker
-===================
+# Yii2 DateTimePicker
 
-Виджет datetimepicker ( http://xdsoft.net/jqplugins/datetimepicker ) для yii2
+### Описание
 
-Использование:
+Виджет DateTimePicker ( http://xdsoft.net/jqplugins/datetimepicker ) для Yii2
 
-use vakorovin\datetimepicker\Datetimepicker;
+### Скриншоты
 
-<?php
-	echo $form->field($model, 'created')->widget(Datetimepicker::className(),[
-		'options' => [
-			'lang'=>'en',
-		]]);
-?>
+![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/1.png)
+![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/2.png)
+![ScreenShot](https://raw.githubusercontent.com/vakorovin/yii2-datetimepicker/master/picker/screen/3.png)
 
-Список доступных пареметров находится на сайте автора плагина datetimepicker: http://xdsoft.net/jqplugins/datetimepicker
+### Установка
+
+В корне вашего проекта в composer.json в раздел "require" пропишите:
+
+    "vakorovin/yii2-datetimepicker": "dev-master"
+
+и после выполните команду:
+
+    php composer.phar install
+
+Или же выполните команду:
+
+    php composer.phar require --prefer-dist vakorovin/yii2-datetimepicker "dev-master"
+
+### Использование
+
+    use vakorovin\datetimepicker\Datetimepicker;
+
+    echo $form->field($model, 'created')->widget(Datetimepicker::className(),[
+	'options' => [
+		'lang'=>'en',
+	]
+    ]);
+
+### Список доступных пареметров находится на сайте автора плагина DateTimePicker: 
+
+http://xdsoft.net/jqplugins/datetimepicker
