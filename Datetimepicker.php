@@ -1,12 +1,18 @@
 <?php
 
+/**
+ * Yii2 DateTimePicker
+ * 
+ * @link https://github.com/vakorovin/yii2-datetimepicker
+ * @license https://github.com/vakorovin/yii2-datetimepicker/blob/master/LICENSE MIT
+ * @author Vladimir Korovin <rolan1986@gmail.com>
+ * @see http://xdsoft.net/jqplugins/datetimepicker
+ */
+
 namespace vakorovin\datetimepicker;
 
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\web\JsExpression;
 use yii\web\View;
-use yii\helpers\Json;
 use yii\widgets\InputWidget;
 
 class Datetimepicker extends InputWidget
