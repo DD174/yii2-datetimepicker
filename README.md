@@ -31,9 +31,9 @@
     use vakorovin\datetimepicker\Datetimepicker;
 
     echo $form->field($model, 'created')->widget(Datetimepicker::className(),[
-	'options' => [
-		'lang'=>'en',
-	]
+        'options' => [
+            'lang' => 'en',
+        ]
     ]);
 
 ### Список доступных пареметров находится на сайте автора плагина DateTimePicker: 
