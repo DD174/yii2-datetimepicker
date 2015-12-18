@@ -4,7 +4,8 @@ namespace vakorovin\datetimepicker;
 
 use yii\web\AssetBundle;
 
-class Assets extends AssetBundle{
+class Assets extends AssetBundle
+{
 	public $sourcePath = '@vakorovin/datetimepicker/picker';
 
     public $js = [

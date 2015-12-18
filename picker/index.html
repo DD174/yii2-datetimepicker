@@ -16,6 +16,9 @@
 	<p><a href="http://xdsoft.net/jqplugins/datetimepicker/">Homepage</a></p>
 	<h3>DateTimePicker</h3>
 	<input type="text" value="" id="datetimepicker"/><br><br>
+  <h3>DateTimePickers selected by class</h3>
+	<input type="text" class="some_class" value="" id="some_class_1"/>
+	<input type="text" class="some_class" value="" id="some_class_2"/>
 	<h3>Mask DateTimePicker</h3>
 	<input type="text" value="" id="datetimepicker_mask"/><br><br>
 	<h3>TimePicker</h3>
@@ -64,16 +67,18 @@ window.onerror = function(errorMsg) {
 $('#datetimepicker').datetimepicker({
 dayOfWeekStart : 1,
 lang:'en',
-	formatDate:'d.m.Y',
-	disabledDates:['08.01.1986','1986/01/09','1986/01/10'],
-startDate:	'05.01.1986'
+disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
+startDate:	'1986/01/05'
 });
 $('#datetimepicker').datetimepicker({value:'2015/04/15 05:03',step:10});
+
+$('.some_class').datetimepicker();
 
 $('#default_datetimepicker').datetimepicker({
 	formatTime:'H:i',
 	formatDate:'d.m.Y',
-	defaultDate:'8.12.1986', // it's my birthday
+	//defaultDate:'8.12.1986', // it's my birthday
+	defaultDate:'+03.01.1970', // it's my birthday
 	defaultTime:'10:00',
 	timepickerScrollbar:false
 });
@@ -129,7 +134,7 @@ $('#destroy').click(function(){
 	}
 });
 var logic = function( currentDateTime ){
-	if( currentDateTime.getDay()==6 ){
+	if (currentDateTime && currentDateTime.getDay() == 6){
 		this.setOptions({
 			minTime:'11:00'
 		});

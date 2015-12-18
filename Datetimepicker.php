@@ -17,15 +17,16 @@ use yii\widgets\InputWidget;
 
 class Datetimepicker extends InputWidget
 {
+	public $options = [];
 
-	public $options=[];
-
-	public function init(){
+	public function init()
+    {
 		parent::init();
         Html::addCssClass($this->options, 'form-control');
 	}
 
-	public function run(){
+	public function run()
+    {
 		Assets::register($this->getView());
 
 		if ($this->hasModel()) {
@@ -34,13 +35,28 @@ class Datetimepicker extends InputWidget
             echo Html::textInput($this->name, $this->value, $this->options);
         }
 
-		$options="";
-		if (!empty($this->options)){
-			$options.="{\n";
-			foreach ((array) $this->options as $param=>$value){
-				$options.="  {$param}: '{$value}',\n";
-			}
-			$options.="}\n";
+		$options = "";
+		if (!empty($this->options)) {
+			$options .= "{\n";
+			foreach ((array) $this->options as $key => $value) {
+                if (is_array($value)) {
+                    $values = [];
+                    foreach ($value as $_key => $_value) {
+                        if (is_int($_value) || is_float($_value) || is_bool($_value)) {
+                            $values[] = $_value; // хотя по факту не нужно, используется только для передачи дат
+                        } else {
+                            $values[] = "'{$_value}'";
+                        }
+                    }
+                    $value = "[" . implode(', ', $values) . "]";
+                    $options .= "    {$param}: {$value},\n";
+                } elseif (is_int($value) || is_float($value)|| is_bool($value)) {
+                    $options .= "    {$param}: {$value},\n";
+                } else {
+                    $options .= "    {$param}: '{$value}',\n";
+                }
+            }
+			$options .= "}\n";
 		}
 
 		$JavaScript = "jQuery('";
