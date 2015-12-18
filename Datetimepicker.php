@@ -42,7 +42,7 @@ class Datetimepicker extends InputWidget
                 if (is_array($value)) {
                     $values = [];
                     foreach ($value as $_key => $_value) {
-                        if (is_int($_value) || is_float($_value) || is_bool($_value)) {
+                        if (is_int($_value) || is_float($_value)) {
                             $values[] = $_value; // хотя по факту не нужно, используется только для передачи дат
                         } else {
                             $values[] = "'{$_value}'";
@@ -50,7 +50,7 @@ class Datetimepicker extends InputWidget
                     }
                     $value = "[" . implode(', ', $values) . "]";
                     $options .= "    {$key}: {$value},\n";
-                } elseif (is_int($value) || is_float($value)|| is_bool($value)) {
+                } elseif (is_int($value) || is_float($value)) {
                     $options .= "    {$key}: {$value},\n";
                 } else {
                     $options .= "    {$key}: '{$value}',\n";
