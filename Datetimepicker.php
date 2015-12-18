@@ -49,11 +49,11 @@ class Datetimepicker extends InputWidget
                         }
                     }
                     $value = "[" . implode(', ', $values) . "]";
-                    $options .= "    {$param}: {$value},\n";
+                    $options .= "    {$key}: {$value},\n";
                 } elseif (is_int($value) || is_float($value)|| is_bool($value)) {
-                    $options .= "    {$param}: {$value},\n";
+                    $options .= "    {$key}: {$value},\n";
                 } else {
-                    $options .= "    {$param}: '{$value}',\n";
+                    $options .= "    {$key}: '{$value}',\n";
                 }
             }
 			$options .= "}\n";
