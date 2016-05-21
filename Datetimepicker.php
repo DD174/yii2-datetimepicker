@@ -36,6 +36,9 @@ class Datetimepicker extends InputWidget
         }
 
 		$options = "";
+		if (!isset($this->options['lang'])) {
+			$this->options['lang'] = strtolower(substr(Yii::$app->language, 0, 2));
+		}
 		if (!empty($this->options)) {
 			$options .= "{\n";
 			foreach ((array) $this->options as $key => $value) {
